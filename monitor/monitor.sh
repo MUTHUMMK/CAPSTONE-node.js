@@ -3,7 +3,7 @@
 a=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=MMK"  --query 'Reservations[].Instances[].PublicIpAddress'     --output text)
 #b=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=mmk"  --query 'Reservations[].Instances[].PublicIpAddress'     --output text)
 
-sed -i s/ec2/$a/g prometheus.yml
+sed -i "s/ec2/$a/g" prometheus.yml
 
 
 scp -o StrictHostKeyChecking=no -i "$SSH_KEY" blackbox.yml "$ubuntu"@$a:/home/ubuntu
