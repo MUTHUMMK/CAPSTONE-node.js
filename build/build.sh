@@ -1,6 +1,5 @@
 #!/bin/bash
 
 #first create image using dockerfile
-docker build -t muthu:v1.2 .
-
+docker build -t muthu:$BUILD_NUMBER .
 
