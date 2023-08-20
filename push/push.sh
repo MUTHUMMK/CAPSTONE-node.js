@@ -2,5 +2,5 @@
 
 # login dockerhub & push the image 
 docker login -u $DOCKERHUBUSER -p $DOCKERHUBPSW
-docker tag muthu:v1.2 muthummkdh/nginx:v1.2
+docker tag muthu:$BUILD_NUMBER muthummkdh/nginx:$BUILD_NUMBER
 docker push muthummkdh/nginx:v1.2
